@@ -1,0 +1,9 @@
+# dist
+bin/
+pkg
+
+.vscode
+vendor
+
+# tools
+debug
