@@ -5,7 +5,7 @@ defmodule BinarySearch do
     search(array, target, 0, high)
   end
 
-  defp search(array, target, low, high, steps \\ 1) do
+  defp search(array, target, low, high, steps \\ 0) do
     idx = Kernel.round((low + high) / 2)
     guess = :array.get(idx, array)
 

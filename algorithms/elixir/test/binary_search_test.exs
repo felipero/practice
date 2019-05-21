@@ -24,13 +24,13 @@ defmodule BinarysearchTest do
                "q"
              ],
              "a"
-           ) == {"a", 0, 5}
+           ) == {"a", 0, 4}
   end
 
   test "search above the middle" do
     assert BinarySearch.search(
              ["a", "b", "c", "d", "e", "f", "g", "h", "i"],
              "i"
-           ) == {"i", 8, 3}
+           ) == {"i", 8, 2}
   end
 end
