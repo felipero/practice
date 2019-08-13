@@ -1,5 +1,6 @@
 package binarysearch
 
+// Search : Function to binary search a target in an arrays
 func Search(array []string, target string) (string, int, int) {
 	high := len(array) - 1
 	return search(array, target, 0, high, 0)
