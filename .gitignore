@@ -25,3 +25,7 @@ cabal.config
 *.hp
 .stack-work/
 
+# ELIXIR
+.elixir_ls/
+*.beam
+
