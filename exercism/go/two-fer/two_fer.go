@@ -1,15 +1,14 @@
-// This is a "stub" file.  It's a little start on your solution.
-// It's not a complete solution though; you have to write some code.
-
-// Package twofer should have a package comment that summarizes what it's about.
-// https://golang.org/doc/effective_go.html#commentary
+// Package twofer implements a simple two for one function.
+// Two-fer or 2-fer is short for two for one. One for you and one for me.
 package twofer
 
-// ShareWith should have a comment documenting it.
+import "fmt"
+
+// ShareWith receives a name string and returns the two fer sentence.
 func ShareWith(name string) string {
 	if name == "" {
 		name = "you"
 	}
-	return "One for " + name + ", one for me."
+	return fmt.Sprintf("One for %v, one for me.", name)
 
 }
