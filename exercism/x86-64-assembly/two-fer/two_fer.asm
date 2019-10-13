@@ -2,7 +2,6 @@
 	section	.text
 	global	two_fer
 two_fer:
-	push	rsi			; Save RSI, the *buffer address
 	lea	r8, [msg_prefix]	; Get the address of the message prefix
 	lea	r10, [msg_suffix]	; Get the address of the message suffix
 	mov	r9, rdi			; Read the name arg from first argument
@@ -40,7 +39,6 @@ copy_suffix:
 	jmp	copy_suffix		; Loop back to copy the next byte in suffix
 
 return:
-	pop	rsi 			; Restore RAX
 	ret				; End the program
 	
 	section .data
