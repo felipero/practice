@@ -1,0 +1,79 @@
+require:
+  - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 2.6
+  Include:
+    - "**/*.rb"
+    - "**/*.gemfile"
+    - "**/*.gemspec"
+    - "**/*.rake"
+    - "**/*.ru"
+    - "**/Gemfile"
+    - "**/Rakefile"
+  Exclude:
+    - "Gemfile.lock"
+
+Metrics/LineLength:
+  Max: 120
+
+# Metrics/ParameterLists:
+#   Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Naming/FileName:
+  Exclude:
+    - "Gemfile"
+# Naming/MemoizedInstanceVariableName:
+#   Enabled: false
+
+# RSpec/MultipleExpectations:
+#   Enabled: false
+#
+# RSpec/NestedGroups:
+#   Enabled: false
+#
+# RSpec/ExampleLength:
+#   Enabled: false
+#
+# RSpec/ContextWording:
+#   Enabled: false
+#
+# RSpec/LetSetup:
+#   Enabled: false
+#
+# RSpec/OverwritingSetup:
+#   Enabled: false
+#
+# RSpec/MessageSpies:
+#   Enabled: false
+#
+# RSpec/AnyInstance:
+#   Enabled: false
+#
+# RSpec/VerifiedDoubles:
+#   Enabled: false
+#
+# RSpec/ScatteredLet:
+#   Enabled: false
+#
+# RSpec/MessageChain:
+#   Enabled: false
+#
+# RSpec/ExpectInHook:
+#   Enabled: false
+#
+# RSpec/DescribeClass:
+#   Enabled: false
+#
+# RSpec/ScatteredSetup:
+#   Enabled: false
+#
+# RSpec/NamedSubject:
+#   Enabled: false
