@@ -3,15 +3,17 @@
 	global	two_fer
 
 %macro copy_str 0 
-%%loop:
-	mov	cl, [r8] 		; Get 1 byte from the message to cl
-	cmp	cl, 0 			; Check if the byte in cl is NULL
-	je	%%end 			; Start copying the name if cl is NULL
+	jmp 	%%loopController
+
+%%loopCopy:
 	mov 	[rsi], cl 		; Insert in *buffer
 	inc 	rsi 			; Move rsi to the next slot
 	inc 	r8			; Move message to the next byte
-	jmp 	%%loop 			; Loop back to copy the next byte
-%%end: 					; end label to finish the macro
+
+%%loopController:
+	mov	cl, [r8] 		; Get 1 byte from the message to cl
+	cmp	cl, 0 			; Check if the byte in cl is NULL
+	jne 	%%loopCopy 		; Loop back to loopTop to copy the next byte
 %endmacro
 
 two_fer:
