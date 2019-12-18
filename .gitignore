@@ -29,3 +29,10 @@ cabal.config
 .elixir_ls/
 *.beam
 
+# Build directories
+build/
+dist/
+target/
+
+# GRADLE BUILDS
+.gradle/
