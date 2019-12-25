@@ -7,7 +7,7 @@ GEM
     parallel (1.19.1)
     parser (2.6.5.0)
       ast (~> 2.4.0)
-    rack (2.0.7)
+    rack (2.0.8)
     rainbow (3.0.0)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
@@ -37,6 +37,7 @@ GEM
     rubocop-rspec (1.37.0)
       rubocop (>= 0.68.1)
     ruby-progressbar (1.10.1)
+    rufo (0.7.0)
     unicode-display_width (1.6.0)
 
 PLATFORMS
@@ -48,6 +49,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   rubocop-rspec
+  rufo
 
 RUBY VERSION
    ruby 2.6.5p114
