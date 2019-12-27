@@ -1,11 +1,7 @@
-class Year {
+struct Year {
   let calendarYear: Int
 
-  init(calendarYear: Int) {
-    self.calendarYear = calendarYear
-  }
-
   func isLeapYear() -> Bool {
-    return calendarYear % 4 == 0 && (calendarYear % 100 != 0 || calendarYear % 400 == 0)
+    return calendarYear.isMultiple(of: 4) && (!calendarYear.isMultiple(of: 100) || calendarYear.isMultiple(of: 400))
   }
 }
