@@ -6,7 +6,7 @@ global leap_year
 	mov	rax, rdi
 	mov	r8, %1
 	div	r8
-	cmp	rdx, 0
+	test	rdx, rdx
 %endmacro
 
 leap_year:
@@ -21,7 +21,7 @@ leap_year:
 	je	return_true	; Divisible by 400
 
 return_false:
-	mov	rax, 0
+	xor	rax, rax
 	ret
 
 return_true:
