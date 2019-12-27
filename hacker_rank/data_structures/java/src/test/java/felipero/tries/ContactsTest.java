@@ -5,13 +5,10 @@ import org.junit.jupiter.api.Timeout;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
@@ -47,7 +44,7 @@ class ContactsTest {
   }
 
   @Test
-  @Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
+  @Timeout(value = 870, unit = TimeUnit.MILLISECONDS)
   void testContacts_from_input_file() throws IOException {
     String input = readFile("src/test/resources/contacts_input02.txt");
     String output = readFile("src/test/resources/contacts_output02.txt");

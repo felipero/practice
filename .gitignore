@@ -36,5 +36,3 @@ target/
 
 # GRADLE BUILDS
 .gradle/
-hacker_rank/data_structures/java/src/test/resources/contacts_input02.txt
-hacker_rank/data_structures/java/src/test/resources/contacts_output02.txt

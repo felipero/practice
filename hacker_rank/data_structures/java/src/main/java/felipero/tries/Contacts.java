@@ -7,32 +7,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.Map.Entry;
 
 class TrieNode {
-  Map<Character, TrieNode> children;
   Character value;
   Boolean complete;
+  Integer count;
+  Map<Character, TrieNode> children;
 
   TrieNode(Character value) {
     this.value = value;
     this.children = new HashMap<Character, TrieNode>();
     this.complete = false;
+    this.count = 0;
   }
 
   public Boolean isComplete() {
     return this.complete;
-  }
-
-  @Override
-  public boolean equals(Object other) {
-    return this.value.equals(((TrieNode) other).value);
-  }
-
-  @Override
-  public int hashCode() {
-    int result = 211 + 109 + ((value == null) ? 0 : value.hashCode());
-    return result;
   }
 }
 
@@ -41,45 +31,45 @@ class Contacts {
   static void add(Map<Character, TrieNode> children, List<Character> nameChars) {
     Character key = nameChars.remove(0);
 
-    TrieNode node = children.get(key);
+    TrieNode currentNode = children.get(key);
 
-    if (node == null) {
-      node = new TrieNode(key);
-      children.put(key, node);
+    if (currentNode == null) {
+      currentNode = new TrieNode(key);
+      children.put(key, currentNode);
     }
 
+    currentNode.count++;
     if (!nameChars.isEmpty())
-      add(node.children, nameChars);
+      add(currentNode.children, nameChars);
     else
-      node.complete = true;
+      currentNode.complete = true;
   }
 
-  static Integer find(Map<Character, TrieNode> trie, List<Character> nameChars) {
-    Integer count = 0;
-
-    if (!nameChars.isEmpty()) {
-      Character key = nameChars.remove(0);
+  static Integer find(Map<Character, TrieNode> trie, List<Character> partialChars) {
+    if (!partialChars.isEmpty()) {
+      Character key = partialChars.remove(0);
       TrieNode node = trie.get(key);
       if (node == null)
         return 0;
 
-      if (nameChars.isEmpty() && node.isComplete())
-        count += 1;
+      if (partialChars.isEmpty())
+        return node.count;
 
-      count += find(node.children, nameChars);
-
-    } else {
-      for (Entry<Character, TrieNode> entry : trie.entrySet()) {
-        TrieNode node = entry.getValue();
-
-        if (node.isComplete())
-          count += 1;
-
-        count += find(node.children, nameChars);
-      }
+      return find(node.children, partialChars);
     }
+    return 0;
+    // } else {
+    // for (Entry<Character, TrieNode> entry : trie.entrySet()) {
+    // TrieNode node = entry.getValue();
 
-    return count;
+    // if (node.isComplete())
+    // count += 1;
+
+    // count += find(node.children, partialChars);
+    // }
+    // }
+
+    // return count;
   }
 
   static int[] contacts(String[][] queries) {
