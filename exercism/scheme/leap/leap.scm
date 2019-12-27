@@ -2,7 +2,7 @@
 
 (define (leap-year? year)
    (and
-     (eq? (remainder year 4) 0) 
-     (or (not (eq? (remainder year 100) 0)) 
-	 (eq? (remainder year 400) 0))))
+     (eqv? (remainder year 4) 0) 
+     (or (not (eqv? (remainder year 100) 0)) 
+	 (eqv? (remainder year 400) 0))))
 
