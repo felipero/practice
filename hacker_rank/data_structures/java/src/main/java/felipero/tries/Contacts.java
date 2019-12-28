@@ -58,18 +58,6 @@ class Contacts {
       return find(node.children, partialChars);
     }
     return 0;
-    // } else {
-    // for (Entry<Character, TrieNode> entry : trie.entrySet()) {
-    // TrieNode node = entry.getValue();
-
-    // if (node.isComplete())
-    // count += 1;
-
-    // count += find(node.children, partialChars);
-    // }
-    // }
-
-    // return count;
   }
 
   static int[] contacts(String[][] queries) {
