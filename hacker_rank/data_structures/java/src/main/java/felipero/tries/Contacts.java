@@ -1,3 +1,7 @@
+/*
+ * Solution for HackerRank problem Contacts:
+ * check https://www.hackerrank.com/challenges/contacts/problem
+ */
 package felipero.tries;
 
 import java.io.IOException;
