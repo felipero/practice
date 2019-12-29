@@ -1,14 +1,12 @@
 #include "reverse_string.h"
-#include <string>
+#include <algorithm>
+
+using namespace std;
 
 namespace reverse_string {
 
-	std::string reverse_string(std::string input) {
-		std::string reverse("");
-
-		for(char & c : input){
-	          reverse.insert(reverse.cbegin(), c);
-		}
-		return reverse;
+	string reverse_string(string input) {
+		reverse(input.begin(), input.end());
+		return input;
 	}
 }  // namespace reverse_string
