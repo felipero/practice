@@ -4,4 +4,4 @@
 
 
 leap_year(Year) -> 
-	(Year rem 4 == 0) and ((Year rem 100 /= 0) or (Year rem 400 == 0)).
+	(Year rem 4 == 0) andalso ((Year rem 100 /= 0) orelse (Year rem 400 == 0)).
