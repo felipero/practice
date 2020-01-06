@@ -42,3 +42,4 @@ target/
 .bloop/
 project/metals.sbt
 .nrepl-port
+.lein-repl-history

@@ -1,17 +1,15 @@
-(ns armstrong-numbers)
-(use 'clojure.math.numeric-tower)
+(ns armstrong-numbers
+  (:require [clojure.math.numeric-tower :refer [expt]]))
 
-(defn digits
-  [num]
+(defn find_digits
+  [num digits]
   (if (< num 10)
-    [num]
-    (conj (digits (quot num 10))
-          (rem num 10))))
+    (conj digits num)
+    (recur (quot num 10) (conj digits (rem num 10)))))
 
 (defn armstrong?
   [num]
-  (def nums (digits num))
-  (def power (count nums))
-  (= (reduce (fn
-               [result digit]
-               (+ result (expt digit power))) 0 nums) num))
+  (let [nums (find_digits num []) power (count nums)]
+    (= (reduce (fn
+                 [result digit]
+                 (+ result (expt digit power))) 0 nums) num)))
