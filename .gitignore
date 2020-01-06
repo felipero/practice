@@ -36,3 +36,9 @@ target/
 
 # GRADLE BUILDS
 .gradle/
+
+# SCALA Language Server
+.metals/
+.bloop/
+project/metals.sbt
+.nrepl-port
