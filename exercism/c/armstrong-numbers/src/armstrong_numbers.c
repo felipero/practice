@@ -2,17 +2,26 @@
 #include <stdio.h>
 #include <math.h>
 
-int is_armstrong_number(int candidate)
-{
+static int countDigits(int candidate) {
   int counter = 0;
 
   for (int i = candidate; i > 0; i = i / 10)
     counter++;
 
+  return counter;
+}
+
+int is_armstrong_number(int candidate)
+{
+  int counter = countDigits(candidate);
+
   if (counter == 1)
     return 1;
 
-  int zeros, result = 0, digits = counter, num = candidate;
+  int zeros =0;
+  int result = 0;
+  int digits = counter; 
+  int num = candidate;
 
   while (num > 0)
   {
@@ -24,3 +33,4 @@ int is_armstrong_number(int candidate)
 
   return result == candidate;
 }
+
