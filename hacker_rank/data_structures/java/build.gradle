@@ -33,7 +33,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = 'felipero.level.order.traversal.App'
+    mainClassName = ''
 }
 
 test {
